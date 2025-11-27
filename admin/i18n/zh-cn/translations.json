@@ -1,1 +1,7 @@
-{}
+
+{
+"Device IP": "设备IP地址",
+"Poll Interval": "查询间隔",
+"Timeout": "超时",
+"Retries": "重试"
+ｗ}

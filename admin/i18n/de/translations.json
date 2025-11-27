@@ -1,1 +1,6 @@
-{}
+{
+"Device IP": "Device IP",
+"Poll Interval": "Abfrage Intervall",
+"Timeout": "Timeout",
+"Retries": "Wiederholung"
+}

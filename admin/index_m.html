@@ -1,1 +1,52 @@
-<html></html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="m">
+<h2>APsystems EZ1 Settings</h2>
+<table>
+<tr>
+<td>Device IP</td>
+<td><input type="text" id="deviceIp" /></td>
+</tr>
+<tr>
+<td>Poll Interval (s)</td>
+<td><input type="number" id="pollInterval" /></td>
+</tr>
+<tr>
+<td>Timeout (ms)</td>
+<td><input type="number" id="httpTimeout" /></td>
+</tr>
+<tr>
+<td>Retries</td>
+<td><input type="number" id="httpRetries" /></td>
+</tr>
+</table>
+</div>
+
+
+<script src="../../lib/js/adapter-settings.js"></script>
+<script src="words.js"></script>
+<script>
+load(function (settings) {
+$('#deviceIp').val(settings.deviceIp);
+$('#pollInterval').val(settings.pollInterval);
+$('#httpTimeout').val(settings.httpTimeout);
+$('#httpRetries').val(settings.httpRetries);
+});
+
+
+save(function () {
+return {
+deviceIp: $('#deviceIp').val(),
+pollInterval: $('#pollInterval').val(),
+httpTimeout: $('#httpTimeout').val(),
+httpRetries: $('#httpRetries').val()
+};
+});
+</script>
+</body>
+</html>
