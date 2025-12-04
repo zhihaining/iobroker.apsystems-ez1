@@ -6,12 +6,16 @@
   "homepage": "https://github.com/zhihaining/iobroker.apsystems-ez1",
   "license": "MIT",
   "main": "main.js",
-  "scripts": { "test": "node test/test.js" },
+  "scripts": {
+    "test": "node test/test.js"
+  },
   "dependencies": {
     "@iobroker/adapter-core": "^3.1.0",
     "axios": "^1.4.0",
-    "axios-retry": "^3.3.1",
+    "axios-retry": "^3.9.1",
     "nodemailer": "^6.9.3"
   },
-  "devDependencies": { "eslint": "^8.0.0" }
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
 }

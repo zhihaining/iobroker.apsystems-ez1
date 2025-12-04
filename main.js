@@ -25,7 +25,7 @@ function getApiForDevice(dev) {
     const cfg = getConfig();
     const timeout = Number(cfg.httpTimeout || 5000);
     const retries = Number(cfg.httpRetries || 2);
-    return createClient({ ip: dev.ip, port: cfg.port || 8050, timeout, retries });
+    return createClient({ ip: "192.168.178.25", port: cfg.port || 8050, timeout, retries });
 }
 
 async function safeGet(api, path, label) {
@@ -41,6 +41,22 @@ async function safeGet(api, path, label) {
         if (errorCounts[key] >= threshold) {
             adapter.log.error(`Persistent error for ${key}: ${err.message || err}`);
             sendAlert(`APsystems EZ1 persistent error for ${key}: ${err.message || err}`);
+            errorCounts[key] = 0;
+        }
+        return null;
+    }
+}
+
+async function normalGet(api, path, label) {
+    try {
+        const res = await api.get(path);
+        if (label) errorCounts[label] = 0;
+        return res;
+    } catch (err) {
+        const key = label || path;
+        errorCounts[key] = (errorCounts[key] || 0) + 1;
+        const threshold = Number(adapter.config && adapter.config.httpRetries ? adapter.config.httpRetries : adapter.native && adapter.native.httpRetries ? adapter.native.httpRetries :2) + 1;
+        if (errorCounts[key] >= threshold) {
             errorCounts[key] = 0;
         }
         return null;
@@ -78,12 +94,14 @@ async function createStatesForDevice(prefix) {
         ['maxPower','Max Power (W)','number','value',{unit:'W'}],
         ['output.p1','Power P1 (W)','number','value.power',{unit:'W'}],
         ['output.p2','Power P2 (W)','number','value.power',{unit:'W'}],
+        ['output.p','Power P (W)','number','value.power',{unit:'W'}],
         ['output.e1','Energy E1 (kWh)','number','value.energy',{unit:'kWh'}],
         ['output.e2','Energy E2 (kWh)','number','value.energy',{unit:'kWh'}],
+        ['output.e','Energy E (kWh)','number','value.energy',{unit:'kWh'}],
         ['output.te1','Lifetime TE1 (kWh)','number','value.energy',{unit:'kWh'}],
         ['output.te2','Lifetime TE2 (kWh)','number','value.energy',{unit:'kWh'}],
-        ['control.maxPower','Control: Max Power (W)','number','level',{unit:'W', write: True}],
-        ['control.onOff','Control: On/Off (0=On,1=Off)','number','switch',{write: True}],
+        ['control.maxPower','Control: Max Power (W)','number','level',{unit:'W', write: true}],
+        ['control.onOff','Control: On/Off (0=On,1=Off)','number','switch',{write: true}],
         ['alarm.og','Alarm: Off Grid','number','indicator',{}],
         ['alarm.isce1','Alarm: DC1 Short Circuit','number','indicator',{}],
         ['alarm.isce2','Alarm: DC2 Short Circuit','number','indicator',{}],
@@ -99,7 +117,7 @@ async function createStatesForDevice(prefix) {
 }
 
 async function updateStatesForDevice(prefix, info, output, maxp, alarm, onoff) {
-    const base = `apsystems-ez1.0.${prefix}`;
+    const base = `apsystems-ez1.0.devices.${prefix}`;
     try {
         if (info && info.data) {
             const d = info.data;
@@ -114,8 +132,10 @@ async function updateStatesForDevice(prefix, info, output, maxp, alarm, onoff) {
             const d = output.data;
             adapter.setState(`${base}.output.p1`, { val: Number(d.p1 || 0), ack: true });
             adapter.setState(`${base}.output.p2`, { val: Number(d.p2 || 0), ack: true });
+            adapter.setState(`${base}.output.p`, { val: (Number(d.p1 || 0)+ Number(d.p2 || 0)), ack: true });
             adapter.setState(`${base}.output.e1`, { val: Number(d.e1 || 0), ack: true });
             adapter.setState(`${base}.output.e2`, { val: Number(d.e2 || 0), ack: true });
+            adapter.setState(`${base}.output.e`, { val: (Number(d.e2 || 0) + Number(d.e1 || 0)), ack: true });
             adapter.setState(`${base}.output.te1`, { val: Number(d.te1 || 0), ack: true });
             adapter.setState(`${base}.output.te2`, { val: Number(d.te2 || 0), ack: true });
         }
@@ -129,7 +149,7 @@ async function updateStatesForDevice(prefix, info, output, maxp, alarm, onoff) {
             adapter.setState(`${base}.alarm.oe`, { val: Number(alarm.data.oe || 0), ack: true });
         }
         if (onoff && onoff.data) {
-            adapter.setState(`${base}.control.onOff`, { val: Number(onoff.data.status || 0), ack: true });
+            adapter.setState(`${base}.control.onOff`, { val: Number(onoff.data.status || 1), ack: true });
         }
     } catch (e) {
         adapter.log.error('updateStatesForDevice error: ' + e);
@@ -138,13 +158,18 @@ async function updateStatesForDevice(prefix, info, output, maxp, alarm, onoff) {
 
 async function pollDevice(dev) {
     const api = getApiForDevice(dev);
-    const info = await safeGet(api, '/getDeviceInfo', `${dev.name}_getDeviceInfo`);
-    const output = await safeGet(api, '/getOutputData', `${dev.name}_getOutputData`);
-    const maxp = await safeGet(api, '/getMaxPower', `${dev.name}_getMaxPower`);
-    const alarm = await safeGet(api, '/getAlarm', `${dev.name}_getAlarm`);
-    const onoff = await safeGet(api, '/getOnOff', `${dev.name}_getOnOff`);
+    const info = await normalGet(api, '/getDeviceInfo', `${dev.name}_getDeviceInfo`);
+    if(info == null){
+        await updateStatesForDevice(dev.name, null, null, null, null, null);
+    }
+    else{
+        const output = await safeGet(api, '/getOutputData', `${dev.name}_getOutputData`);
+        const maxp = await safeGet(api, '/getMaxPower', `${dev.name}_getMaxPower`);
+        const alarm = await safeGet(api, '/getAlarm', `${dev.name}_getAlarm`);
+        const onoff = await safeGet(api, '/getOnOff', `${dev.name}_getOnOff`);
 
-    await updateStatesForDevice(dev.name, info, output, maxp, alarm, onoff);
+        await updateStatesForDevice(dev.name, info, output, maxp, alarm, onoff);
+    }
 }
 
 async function onReady() {
@@ -156,7 +181,7 @@ async function onReady() {
     } else if (cfg.deviceIp) {
         devices = [{ name: 'EZ1', ip: cfg.deviceIp }];
     } else {
-        devices = [{ name: 'EZ1', ip: '192.168.1.50' }];
+        devices = [{ name: 'EZ1', ip: '192.168.178.25' }];
     }
     for (const dev of devices) {
         await createStatesForDevice(`devices.${dev.name}`);
@@ -184,8 +209,8 @@ async function onStateChange(id, state) {
     const cfg = getConfig();
     const devs = Array.isArray(cfg.devices) && cfg.devices.length ? cfg.devices : (cfg.deviceIp ? [{name:'EZ1', ip:cfg.deviceIp}] : []);
     const dev = devs.find(d => (d.name||d.ip) == devName);
-    if (!dev) return;
-    const api = getApiForDevice({ name: devName, ip: dev.ip });
+    //if (!dev) return;
+    const api = getApiForDevice({ name: devName, ip: "192.168.178.25" });
     if (control === 'control.maxPower') {
         try {
             await api.get(`/setMaxPower?p=${encodeURIComponent(state.val)}`);
