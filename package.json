@@ -16,6 +16,7 @@
     "nodemailer": "^6.9.3"
   },
   "devDependencies": {
+    "@iobroker/create-adapter": "^3.1.2",
     "eslint": "^8.0.0"
   }
 }
