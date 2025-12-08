@@ -1,8 +1,7 @@
 {
-  "Device IP": "Device IP",
-  "Devices": "Devices",
-  "Poll Interval": "Poll Interval",
-  "Timeout": "Timeout",
-  "Retries": "Retries",
-  "Alert Email": "Alert Email"
+  "Alert Email": "报警邮箱",
+  "Devices": "设备列表",
+  "Poll Interval": "轮询间隔",
+  "Retries": "重试次数",
+  "Timeout": "超时"
 }

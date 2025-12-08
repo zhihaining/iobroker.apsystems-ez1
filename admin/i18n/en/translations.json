@@ -1,8 +1,7 @@
 {
-  "Device IP": "Device IP",
+  "Alert Email": "Alert Email",
   "Devices": "Devices",
   "Poll Interval": "Poll Interval",
-  "Timeout": "Timeout",
   "Retries": "Retries",
-  "Alert Email": "Alert Email"
+  "Timeout": "Timeout"
 }

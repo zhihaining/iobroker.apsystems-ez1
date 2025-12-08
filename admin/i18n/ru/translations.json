@@ -1,8 +1,7 @@
 {
-  "Device IP": "Device IP",
-  "Devices": "Devices",
-  "Poll Interval": "Poll Interval",
-  "Timeout": "Timeout",
-  "Retries": "Retries",
-  "Alert Email": "Alert Email"
+  "Alert Email": "Оповещение по электронной почте",
+  "Devices": "Устройства",
+  "Poll Interval": "Интервал опроса",
+  "Retries": "Повторные попытки",
+  "Timeout": "Тайм-аут"
 }

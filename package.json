@@ -15,7 +15,9 @@
   },
   "scripts": {
     "test": "node test/test.js",
-    "release": "standard-version --release-as"
+    "release": "standard-version --release-as",
+    "translate": "translate-adapter",
+    "build": "build-adapter"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.1.0",
@@ -24,6 +26,7 @@
     "nodemailer": "^6.9.3"
   },
   "devDependencies": {
+    "@iobroker/adapter-dev": "^1.5.0",
     "@iobroker/create-adapter": "^3.1.2",
     "eslint": "^8.0.0",
     "standard-version": "^9.5.0"

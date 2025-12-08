@@ -4,7 +4,17 @@
     "version": "0.1.0",
     "news": {
       "0.1.0": {
-        "en": "initial release"
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "первоначальный выпуск",
+        "pt": "lançamento inicial",
+        "nl": "eerste release",
+        "fr": "version initiale",
+        "it": "rilascio iniziale",
+        "es": "lanzamiento inicial",
+        "pl": "pierwsze wydanie",
+        "uk": "початковий випуск",
+        "zh-cn": "初始版本"
       }
     },
     "title": "APsystems EZ1 Adapter",
@@ -12,13 +22,27 @@
       "en": "APsystems EZ1 Adapter",
       "de": "APsystems EZ1 Adapter",
       "ru": "APsystems EZ1 адаптер",
-      "zh-cn": "APsystems EZ1 适配器"
+      "zh-cn": "APsystems EZ1 适配器",
+      "pt": "Adaptador APsystems EZ1",
+      "nl": "APsystems EZ1-adapter",
+      "fr": "Adaptateur APsystems EZ1",
+      "it": "Adattatore APsystems EZ1",
+      "es": "Adaptador APsystems EZ1",
+      "pl": "Adapter APsystems EZ1",
+      "uk": "Адаптер APsystems EZ1"
     },
     "desc": {
       "en": "APsystems EZ1 Adapter",
       "de": "APsystems EZ1 Adapter",
       "ru": "APsystems EZ1 адаптер",
-      "zh-cn": "APsystems EZ1 适配器"
+      "zh-cn": "APsystems EZ1 适配器",
+      "pt": "Adaptador APsystems EZ1",
+      "nl": "APsystems EZ1-adapter",
+      "fr": "Adaptateur APsystems EZ1",
+      "it": "Adattatore APsystems EZ1",
+      "es": "Adaptador APsystems EZ1",
+      "pl": "Adapter APsystems EZ1",
+      "uk": "Адаптер APsystems EZ1"
     },
     "authors": [
       "haining zhi <https://github.com/zhihaining>"
