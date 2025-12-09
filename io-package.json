@@ -68,6 +68,9 @@
         "compact": true,
         "connectionType": "local",
         "dataSource": "poll",
+        "adminUI": {
+            "config": "none"
+        },
         "supportCustoms": true,
         "dependencies": [
             {
