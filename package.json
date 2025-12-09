@@ -1,35 +1,72 @@
 {
-  "name": "@zhihaining/iobroker.apsystems-ez1",
+  "name": "iobroker.apsystems-ez1",
   "version": "0.1.1",
-  "description": "APsystems EZ1 local API adapter for ioBroker",
-  "author": "haining zhi (https://github.com/zhihaining)",
-  "homepage": "https://github.com/zhihaining/iobroker.apsystems-ez1",
+  "description": "APsystems EZ1 microinverters local API adapter for ioBroker",
+  "author": {
+    "name": "Haining Zhi",
+    "email": "zhihaining@gmail.com"
+  },
+  "contributors": [],
+  "homepage": "https://github.com/zhihaining/ioBroker.apsystems-ez1",
   "license": "MIT",
-  "main": "main.js",
+  "keywords": [
+    "Energy",
+    "solar",
+    "inverter",
+    "apsystems"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhihaining/iobroker.apsystems-ez1.git"
+    "url": "https://github.com/zhihaining/ioBroker.apsystems-ez1.git"
+  },
+  "engines": {
+    "node": ">= 20"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "scripts": {
-    "test": "node test/test.js",
-    "release": "standard-version --release-as",
-    "translate": "translate-adapter",
-    "build": "build-adapter"
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.1.0",
-    "axios": "^1.4.0",
-    "axios-retry": "^3.9.1",
-    "nodemailer": "^6.9.3"
+    "@iobroker/adapter-core": "^3.3.2"
   },
   "devDependencies": {
+    "@alcalzone/release-script": "^5.0.0",
+    "@alcalzone/release-script-plugin-iobroker": "^4.0.0",
+    "@alcalzone/release-script-plugin-license": "^4.0.0",
+    "@alcalzone/release-script-plugin-manual-review": "^4.0.0",
     "@iobroker/adapter-dev": "^1.5.0",
-    "@iobroker/create-adapter": "^3.1.2",
-    "@iobroker/repochecker": "^5.1.1",
-    "eslint": "^8.0.0",
-    "standard-version": "^9.5.0"
-  }
+    "@iobroker/dev-server": "^0.8.0",
+    "@iobroker/eslint-config": "^2.2.0",
+    "@iobroker/testing": "^5.2.2",
+    "@tsconfig/node20": "^20.1.8",
+    "@types/iobroker": "npm:@iobroker/types@^7.1.0",
+    "@types/node": "^20.19.25",
+    "typescript": "~5.9.3"
+  },
+  "main": "main.js",
+  "files": [
+    "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
+    "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
+    "lib/",
+    "widgets/**/!(tsconfig|tsconfig.*|.eslintrc).json",
+    "widgets/**/*.{html,css,png,svg,jpg,js}",
+    "www/",
+    "io-package.json",
+    "LICENSE",
+    "main.js"
+  ],
+  "scripts": {
+    "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
+    "test:package": "mocha test/package --exit",
+    "test:integration": "mocha test/integration --exit",
+    "test": "npm run test:js && npm run test:package",
+    "check": "tsc --noEmit -p tsconfig.check.json",
+    "lint": "eslint -c eslint.config.mjs .",
+    "translate": "translate-adapter",
+    "release": "release-script",
+    "dev-server": "dev-server"
+  },
+  "bugs": {
+    "url": "https://github.com/zhihaining/ioBroker.apsystems-ez1/issues"
+  },
+  "readmeFilename": "README.md"
 }
