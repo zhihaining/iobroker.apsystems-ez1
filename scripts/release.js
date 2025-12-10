@@ -81,16 +81,6 @@ ioPkg.common.news = ioPkg.common.news || {};
 if (!ioPkg.common.news[newVersion]) {
   ioPkg.common.news[newVersion] = {
     en: changeMsg,
-    de: 'Änderungen für dieses Release beschreiben',
-    'zh-cn': '描述此版本的更新内容',
-    ru: 'Опишите изменения для этого релиза',
-    pt: 'Descreva as alterações para esta versão',
-    nl: 'Beschrijf wijzigingen voor deze release',
-    fr: 'Décrivez les modifications pour cette version',
-    it: 'Descrivere le modifiche per questa versione',
-    es: 'Describa los cambios para esta versión',
-    pl: 'Opisz zmiany dla tego wydania',
-    uk: 'Опишіть зміни для цього релізу'
   };
   log(`Added news entry for ${newVersion}`);
 } else {

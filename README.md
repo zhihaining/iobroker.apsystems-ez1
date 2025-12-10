@@ -99,7 +99,7 @@ Using GitHub Actions, you can enable automatic releases on npm whenever you push
 Since you installed the release script, you can create a new
 release simply by calling:
 ```bash
-npm run release
+node scripts/release.js [new version]  -m "text description for the new release"
 ```
 Additional command line options for the release script are explained in the
 [release-script documentation](https://github.com/AlCalzone/release-script#command-line).
@@ -164,9 +164,11 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
 - ipAddr (string) - Device IP
 - minPower (number) - Min supported power (W)
 - maxPower (number) - Max supported power (W)
+- output.p (number) - Power channel1+2 (W)
 - output.p1 (number) - Power channel1 (W)
 - output.p2 (number) - Power channel2 (W)
 - output.e1 (number) - Energy channel1 (kWh)
+- output.e (number) - Energy channel1+2 (kWh)
 - output.e2 (number) - Energy channel2 (kWh)
 - output.te1 (number) - Lifetime energy channel1 (kWh)
 - output.te2 (number) - Lifetime energy channel2 (kWh)
