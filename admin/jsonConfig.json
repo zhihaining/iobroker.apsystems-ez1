@@ -25,15 +25,7 @@
               "title": { "en": "Name", "de": "Name", "zh-cn": "名称" },
               "width": "30%",
               "xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3,
-              "validator": {
-                "type": "regex",
-                "pattern": "^[^\\s].{0,62}$",
-                "message": {
-                  "en": "Name must not be empty or start with whitespace (max 63 chars).",
-                  "de": "Name darf nicht leer sein oder mit Leerzeichen beginnen (max. 63 Zeichen).",
-                  "zh-cn": "名称不能为空或以空格开头（最多 63 个字符）。"
-                }
-              }
+              "validator": "function (value, data) { return /^[^\\s].{0,62}$/.test(value); }"
             },
             {
               "type": "text",
@@ -41,15 +33,7 @@
               "title": { "en": "IP address", "de": "IP-Adresse", "zh-cn": "IP 地址" },
               "width": "40%",
               "xs": 12, "sm": 6, "md": 6, "lg": 5, "xl": 5,
-              "validator": {
-                "type": "regex",
-                "pattern": "^(?:\\d{1,3}\\.){3}\\d{1,3}$",
-                "message": {
-                  "en": "Enter a valid IPv4 address (e.g., 192.168.1.50).",
-                  "de": "Bitte eine gültige IPv4-Adresse eingeben (z. B. 192.168.1.50).",
-                  "zh-cn": "请输入有效的 IPv4 地址（如 192.168.1.50）。"
-                }
-              }
+              "validator": "function (value, data) { return /^(?:\\d{1,3}\\.){3}\\d{1,3}$/.test(value); }"
             }
           ]
         },
@@ -133,15 +117,7 @@
             "zh-cn": "如设置，将通过本地邮件发送严重错误（需本地邮件配置）。"
           },
           "default": "",
-          "validator": {
-            "type": "regex",
-            "pattern": "^$|^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
-            "message": {
-              "en": "Leave empty or provide a valid email address.",
-              "de": "Leer lassen oder eine gültige E-Mail-Adresse angeben.",
-              "zh-cn": "留空或提供有效的邮箱地址。"
-            }
-          },
+          "validator": "function (value, data) { return /^$|^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(value); }",
           "xs": 12, "sm": 12, "md": 6, "lg": 4, "xl": 4
         }
       }
