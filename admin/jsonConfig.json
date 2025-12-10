@@ -1,0 +1,177 @@
+{
+  "type": "tabs",
+  "items": {
+    "general": {
+      "type": "panel",
+      "label": {
+        "en": "General",
+        "de": "Allgemein",
+        "zh-cn": "常规"
+      },
+      "items": {
+        "devices": {
+          "type": "array",
+          "label": {
+            "en": "Devices",
+            "de": "Geräte",
+            "zh-cn": "设备列表"
+          },
+          "tooltip": {
+            "en": "Add one or more EZ1 devices you want to poll.",
+            "de": "Fügen Sie ein oder mehrere EZ1-Geräte hinzu, die abgefragt werden sollen.",
+            "zh-cn": "添加需要轮询的一个或多个 EZ1 设备。"
+          },
+          "itemLabel": "name",
+          "sortable": true,
+          "table": true,
+          "default": [
+            { "name": "EZ1", "ip": "192.168.1.50" }
+          ],
+          "items": {
+            "name": {
+              "type": "text",
+              "label": {
+                "en": "Name",
+                "de": "Name",
+                "zh-cn": "名称"
+              },
+              "width": "30%",
+              "default": "EZ1",
+              "validator": {
+                "type": "regex",
+                "pattern": "^[^\\s].{0,62}$",
+                "message": {
+                  "en": "Name must not be empty or start with whitespace (max 63 chars).",
+                  "de": "Name darf nicht leer sein oder mit Leerzeichen beginnen (max. 63 Zeichen).",
+                  "zh-cn": "名称不能为空或以空格开头（最多 63 个字符）。"
+                }
+              }
+            },
+            "ip": {
+              "type": "text",
+              "label": {
+                "en": "IP address",
+                "de": "IP-Adresse",
+                "zh-cn": "IP 地址"
+              },
+              "width": "40%",
+              "default": "192.168.1.50",
+              "validator": {
+                "type": "regex",
+                "pattern": "^(?:\\d{1,3}\\.){3}\\d{1,3}$",
+                "message": {
+                  "en": "Please enter a valid IPv4 address (e.g., 192.168.1.50).",
+                  "de": "Bitte eine gültige IPv4-Adresse eingeben (z. B. 192.168.1.50).",
+                  "zh-cn": "请输入有效的 IPv4 地址（如 192.168.1.50）。"
+                }
+              }
+            }
+          }
+        },
+
+        "pollInterval": {
+          "type": "number",
+          "label": {
+            "en": "Polling interval (seconds)",
+            "de": "Abfrageintervall (Sekunden)",
+            "zh-cn": "轮询间隔（秒）"
+          },
+          "tooltip": {
+            "en": "How often to poll the devices.",
+            "de": "Wie oft die Geräte abgefragt werden.",
+            "zh-cn": "轮询设备的频率。"
+          },
+          "min": 5,
+          "max": 3600,
+          "default": 30
+        },
+
+        "httpTimeout": {
+          "type": "number",
+          "label": {
+            "en": "HTTP timeout (ms)",
+            "de": "HTTP-Timeout (ms)",
+            "zh-cn": "HTTP 超时（毫秒）"
+          },
+          "tooltip": {
+            "en": "Timeout for requests to each device.",
+            "de": "Timeout für Anfragen an jedes Gerät.",
+            "zh-cn": "每个设备请求的超时。"
+          },
+          "min": 500,
+          "max": 60000,
+          "step": 100,
+          "default": 5000
+        },
+
+        "httpRetries": {
+          "type": "number",
+          "label": {
+            "en": "HTTP retries",
+            "de": "HTTP-Wiederholungen",
+            "zh-cn": "HTTP 重试次数"
+          },
+          "tooltip": {
+            "en": "Number of automatic retries for transient errors.",
+            "de": "Anzahl automatischer Wiederholungen bei vorübergehenden Fehlern.",
+            "zh-cn": "短暂错误的自动重试次数。"
+          },
+          "min": 0,
+          "max": 10,
+          "default": 2
+        }
+      }
+    },
+
+    "advanced": {
+      "type": "panel",
+      "label": {
+        "en": "Advanced",
+        "de": "Erweitert",
+        "zh-cn": "高级"
+      },
+      "items": {
+        "port": {
+          "type": "number",
+          "label": {
+            "en": "EZ1 API port",
+            "de": "EZ1 API-Port",
+            "zh-cn": "EZ1 接口端口"
+          },
+          "tooltip": {
+            "en": "Local HTTP API port of EZ1 (default 8050).",
+            "de": "Lokaler HTTP-API-Port des EZ1 (Standard 8050).",
+            "zh-cn": "EZ1 的本地 HTTP API 端口（默认 8050）。"
+          },
+          "min": 1,
+          "max": 65535,
+          "default": 8050
+        },
+
+        "alertEmail": {
+          "type": "text",
+          "label": {
+            "en": "Alert email (optional)",
+            "de": "Alarm-E-Mail (optional)",
+            "zh-cn": "告警邮箱（可选）"
+          },
+          "tooltip": {
+            "en": "If set, critical errors will be mailed (requires local mail setup).",
+            "de": "Wenn gesetzt, werden kritische Fehler per E-Mail versendet (lokale Mail-Konfiguration erforderlich).",
+            "zh-cn": "如设置，将通过本地邮件发送严重错误（需本地邮件配置）。"
+          },
+          "default": "",
+          "validator": {
+            "type": "regex",
+            "pattern": "^$|^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+            "message": {
+              "en": "Leave empty or provide a valid email address.",
+              "de": "Leer lassen oder eine gültige E-Mail-Adresse angeben.",
+              "zh-cn": "留空或提供有效的邮箱地址。"
+            }
+          }
+        }
+      }
+    }
+  }
+}
