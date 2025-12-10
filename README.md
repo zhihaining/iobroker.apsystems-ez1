@@ -125,7 +125,8 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
     ### **WORK IN PROGRESS**
 -->
 ### 0.1.3 (2025-12-10)
-- Describe changes for this release
+- Refactor release script, add i18n step, avoid duplicates
+
 
 ### 0.1.2 (2025-12-10)
 - Fix JSON parsing and repository checker issues; add adminUI config and icons.
