@@ -1,106 +1,89 @@
 {
-    "common": {
-        "name": "apsystems-ez1",
-        "version": "0.1.2",
-        "news": {
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "uk": "Початкова версія",
-                "zh-cn": "首次出版"
-            }
-        },
-        "titleLang": {
-            "en": "Setup Apsystems EZ1 M Device",
-            "de": "Richten Sie das Apsystems EZ1 M-Gerät ein",
-            "ru": "Настройка устройства Apsystems EZ1 M",
-            "pt": "Configurar dispositivo Apsystems EZ1 M",
-            "nl": "Apsystems EZ1 M-apparaat instellen",
-            "fr": "Configuration du périphérique Apsystems EZ1 M",
-            "it": "Configurazione del dispositivo Apsystems EZ1 M",
-            "es": "Configurar el dispositivo Apsystems EZ1 M",
-            "pl": "Skonfiguruj urządzenie Apsystems EZ1 M",
-            "uk": "Налаштування пристрою Apsystems EZ1 M",
-            "zh-cn": "设置 Apsystems EZ1 M 设备"
-        },
-        "desc": {
-            "en": "This adapter integrates with APsystems EZ1 microinverters via the device's Local HTTP API (port 8050). It supports reading realtime power/energy, device info, alarms and allows setting MaxPower and On/Off state.",
-            "de": "Dieser Adapter lässt sich über die lokale HTTP-API des Geräts (Port 8050) in APsystems EZ1-Mikrowechselrichter integrieren. Es unterstützt das Auslesen von Strom/Energie, Geräteinformationen und Alarmen in Echtzeit und ermöglicht die Einstellung von MaxPower und Ein/Aus-Status.",
-            "ru": "Этот адаптер интегрируется с микроинверторами APsystems EZ1 через локальный HTTP API устройства (порт 8050). Он поддерживает считывание мощности/энергии в реальном времени, информацию об устройстве, сигналы тревоги и позволяет настраивать состояние максимальной мощности и включения/выключения.",
-            "pt": "Este adaptador se integra aos microinversores APsystems EZ1 por meio da API HTTP local do dispositivo (porta 8050). Ele suporta a leitura de potência/energia em tempo real, informações do dispositivo, alarmes e permite definir o estado MaxPower e On/Off.",
-            "nl": "Deze adapter kan worden geïntegreerd met APsystems EZ1-micro-omvormers via de lokale HTTP API van het apparaat (poort 8050). Het ondersteunt het lezen van realtime vermogen/energie, apparaatinformatie, alarmen en maakt het instellen van MaxPower en aan/uit-status mogelijk.",
-            "fr": "Cet adaptateur s'intègre aux micro-onduleurs APsystems EZ1 via l'API HTTP locale de l'appareil (port 8050). Il prend en charge la lecture de la puissance/énergie en temps réel, des informations sur l'appareil, des alarmes et permet de définir l'état MaxPower et On/Off.",
-            "it": "Questo adattatore si integra con i microinverter APsystems EZ1 tramite l'API HTTP locale del dispositivo (porta 8050). Supporta la lettura di potenza/energia in tempo reale, informazioni sul dispositivo, allarmi e consente di impostare MaxPower e lo stato On/Off.",
-            "es": "Este adaptador se integra con los microinversores APsystems EZ1 a través de la API HTTP local del dispositivo (puerto 8050). Admite la lectura de potencia/energía en tiempo real, información del dispositivo, alarmas y permite configurar MaxPower y el estado de encendido/apagado.",
-            "pl": "Ten adapter integruje się z mikroinwerterami APsystems EZ1 poprzez lokalne API HTTP urządzenia (port 8050). Obsługuje odczyt mocy/energii w czasie rzeczywistym, informacji o urządzeniu, alarmach i umożliwia ustawienie MaxPower oraz stanu włączenia/wyłączenia.",
-            "uk": "Цей адаптер інтегрується з мікроінверторами APsystems EZ1 через локальний HTTP API пристрою (порт 8050). Він підтримує зчитування живлення/енергії в реальному часі, інформацію про пристрій, сигнали тривоги та дозволяє встановлювати MaxPower і стан On/Off.",
-            "zh-cn": "该适配器通过设备的本地 HTTP API（端口 8050）与 APsystems EZ1 微型逆变器集成。它支持读取实时功率/能量、设备信息、警报，并允许设置 MaxPower 和开/关状态。"
-        },
-        "authors": [
-            "Haining Zhi <zhihaining@gmail.com>"
-        ],
-        "keywords": [
-            "Energy",
-            "solar",
-            "inverter",
-            "apsystems"
-        ],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "platform": "Javascript/Node.js",
-        "icon": "apsystems-ez1.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/zhihaining/ioBroker.apsystems-ez1/master/admin/apsystems-ez1.png",
-        "readme": "https://github.com/zhihaining/ioBroker.apsystems-ez1/blob/master/README.md",
-        "loglevel": "info",
-        "tier": 3,
-        "mode": "daemon",
-        "type": "energy",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "poll",
-        "adminUI": {
-            "config": "none"
-        },
-        "supportCustoms": true,
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.0.23"
-            }
-        ]
+  "common": {
+    "name": "apsystems-ez1",
+    "version": "0.1.2",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "uk": "Початкова версія",
+        "zh-cn": "首次出版"
+      }
     },
-    "title": "APsystems EZ1 Adapter",
-
+    "titleLang": {
+      "en": "Setup Apsystems EZ1 M Device",
+      "de": "Richten Sie das Apsystems EZ1 M-Gerät ein",
+      "ru": "Настройка устройства Apsystems EZ1 M",
+      "pt": "Configurar dispositivo Apsystems EZ1 M",
+      "nl": "Apsystems EZ1 M-apparaat instellen",
+      "fr": "Configuration du périphérique Apsystems EZ1 M",
+      "it": "Configurazione del dispositivo Apsystems EZ1 M",
+      "es": "Configurar el dispositivo Apsystems EZ1 M",
+      "pl": "Skonfiguruj urządzenie Apsystems EZ1 M",
+      "uk": "Налаштування пристрою Apsystems EZ1 M",
+      "zh-cn": "设置 Apsystems EZ1 M 设备"
+    },
+    "desc": {
+      "en": "This adapter integrates with APsystems EZ1 microinverters via the device's Local HTTP API (port 8050). It supports reading realtime power/energy, device info, alarms and allows setting MaxPower and On/Off state.",
+      "de": "Dieser Adapter lässt sich über die lokale HTTP-API des Geräts (Port 8050) in APsystems EZ1-Mikrowechselrichter integrieren. Es unterstützt das Auslesen von Strom/Energie, Geräteinformationen und Alarmen in Echtzeit und ermöglicht die Einstellung von MaxPower und Ein/Aus-Status.",
+      "ru": "Этот адаптер интегрируется с микроинверторами APsystems EZ1 через локальный HTTP API устройства (порт 8050). Он поддерживает считывание мощности/энергии в реальном времени, информацию об устройстве, сигналы тревоги и позволяет настраивать состояние максимальной мощности и включения/выключения.",
+      "pt": "Este adaptador se integra aos microinversores APsystems EZ1 por meio da API HTTP local do dispositivo (porta 8050). Ele suporta a leitura de potência/energia em tempo real, informações do dispositivo, alarmes e permite definir o estado MaxPower e On/Off.",
+      "nl": "Deze adapter kan worden geïntegreerd met APsystems EZ1-micro-omvormers via de lokale HTTP API van het apparaat (poort 8050). Het ondersteunt het lezen van realtime vermogen/energie, apparaatinformatie, alarmen en maakt het instellen van MaxPower en aan/uit-status mogelijk.",
+      "fr": "Cet adaptateur s'intègre aux micro-onduleurs APsystems EZ1 via l'API HTTP locale de l'appareil (port 8050). Il prend en charge la lecture de la puissance/énergie en temps réel, des informations sur l'appareil, des alarmes et permet de définir l'état MaxPower et On/Off.",
+      "it": "Questo adattatore si integra con i microinverter APsystems EZ1 tramite l'API HTTP locale del dispositivo (porta 8050). Supporta la lettura di potenza/energia in tempo reale, informazioni sul dispositivo, allarmi e consente di impostare MaxPower e lo stato On/Off.",
+      "es": "Este adaptador se integra con los microinversores APsystems EZ1 a través de la API HTTP local del dispositivo (puerto 8050). Admite la lectura de potencia/energía en tiempo real, información del dispositivo, alarmas y permite configurar MaxPower y el estado de encendido/apagado.",
+      "pl": "Ten adapter integruje się z mikroinwerterami APsystems EZ1 poprzez lokalne API HTTP urządzenia (port 8050). Obsługuje odczyt mocy/energii w czasie rzeczywistym, informacji o urządzeniu, alarmach i umożliwia ustawienie MaxPower oraz stanu włączenia/wyłączenia.",
+      "uk": "Цей адаптер інтегрується з мікроінверторами APsystems EZ1 через локальний HTTP API пристрою (порт 8050). Він підтримує зчитування живлення/енергії в реальному часі, інформацію про пристрій, сигнали тривоги та дозволяє встановлювати MaxPower і стан On/Off.",
+      "zh-cn": "该适配器通过设备的本地 HTTP API（端口 8050）与 APsystems EZ1 微型逆变器集成。它支持读取实时功率/能量、设备信息、警报，并允许设置 MaxPower 和开/关状态。"
+    },
     "authors": [
       "haining zhi <https://github.com/zhihaining>"
     ],
-    "license": "MIT",
-    "platform": "Javascript/Node.js",
-    "mode": "daemon",
-    "icon": "apsystems.png",
-    "type": "energy",
     "keywords": [
       "iobroker",
       "solar",
       "EZ1",
       "Apsystems"
     ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "apsystems.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/zhihaining/ioBroker.apsystems-ez1/master/admin/apsystems-ez1.png",
+    "readme": "https://github.com/zhihaining/ioBroker.apsystems-ez1/blob/master/README.md",
     "loglevel": "info",
-    "enabled": true
+    "tier": 3,
+    "mode": "daemon",
+    "type": "energy",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "none"
+    },
+    "supportCustoms": true,
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.0.23"
+      }
+    ],
+    "title": "APsystems EZ1 Adapter",
+    "license": "MIT"
   },
   "native": {
     "deviceIp": "192.168.1.50",
@@ -117,27 +100,27 @@
     "alertEmail": ""
   },
   "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
-    ]
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
