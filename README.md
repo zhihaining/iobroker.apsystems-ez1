@@ -1,6 +1,8 @@
 ![Logo](admin/apsystems-ez1.png)
 # ioBroker.apsystems-ez1
 
+Current adapter version: **0.1.2**
+
 **Author:** haining zhi (https://github.com/zhihaining)
 
 This adapter integrates with APsystems EZ1 microinverters via the device's Local HTTP API (port 8050). It supports reading realtime power/energy, device info, alarms and allows setting MaxPower and On/Off state.

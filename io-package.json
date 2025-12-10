@@ -3,7 +3,7 @@
     "name": "apsystems-ez1",
     "version": "0.1.2",
     "news": {
-      "0.0.1": {
+      "0.1.1": {
         "en": "initial release",
         "de": "Erstveröffentlichung",
         "ru": "Начальная версия",
@@ -15,7 +15,13 @@
         "pl": "Pierwsze wydanie",
         "uk": "Початкова версія",
         "zh-cn": "首次出版"
+      },
+      "0.1.2": {
+        "en": "Fix JSON parsing and repository checker issues; add adminUI config and icons.",
+        "de": "JSON-Parsing und Repo-Checker-Probleme behoben; adminUI-Konfiguration und Icons hinzugefügt."
       }
+    }
+
     },
     "titleLang": {
       "en": "Setup Apsystems EZ1 M Device",
@@ -57,7 +63,7 @@
       "license": "MIT"
     },
     "platform": "Javascript/Node.js",
-    "icon": "apsystems.png",
+    "icon": "apsystems-ez1.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/zhihaining/ioBroker.apsystems-ez1/master/admin/apsystems-ez1.png",
     "readme": "https://github.com/zhihaining/ioBroker.apsystems-ez1/blob/master/README.md",
@@ -83,7 +89,6 @@
       }
     ],
     "title": "APsystems EZ1 Adapter",
-    "license": "MIT"
   },
   "native": {
     "deviceIp": "192.168.1.50",
