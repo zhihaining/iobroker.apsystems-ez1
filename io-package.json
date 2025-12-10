@@ -18,7 +18,16 @@
       },
       "0.1.2": {
         "en": "Fix JSON parsing and repository checker issues; add adminUI config and icons.",
-        "de": "JSON-Parsing und Repo-Checker-Probleme behoben; adminUI-Konfiguration und Icons hinzugefügt."
+        "de": "JSON-Parsing und Repo-Checker-Probleme behoben; adminUI-Konfiguration und Icons hinzugefügt.",
+        "ru": "Исправить проблемы с анализом JSON и проверкой репозитория; добавьте конфигурацию и значки adminUI.",
+        "pt": "Corrigir problemas de análise JSON e verificador de repositório; adicione configuração e ícones do adminUI.",
+        "nl": "Problemen met JSON-parsing en repositorycontrole oplossen; voeg adminUI-configuratie en pictogrammen toe.",
+        "fr": "Résoudre les problèmes d'analyse JSON et de vérificateur de référentiel ; ajoutez la configuration et les icônes adminUI.",
+        "it": "Risolti i problemi di analisi JSON e controllo del repository; aggiungi la configurazione e le icone dell'interfaccia utente amministrativa.",
+        "es": "Solucionar problemas de análisis JSON y verificador de repositorio; agregue la configuración y los íconos de adminUI.",
+        "pl": "Napraw problemy z analizą JSON i sprawdzaniem repozytoriów; dodaj konfigurację i ikony interfejsu administratora.",
+        "uk": "Вирішити проблеми аналізу JSON і перевірки сховища; додати конфігурацію і іконки adminUI.",
+        "zh-cn": "修复 JSON 解析和存储库检查器问题；添加 adminUI 配置和图标。"
       }
     },
     "titleLang": {
@@ -51,7 +60,6 @@
       "haining zhi <https://github.com/zhihaining>"
     ],
     "keywords": [
-      "iobroker",
       "solar",
       "EZ1",
       "Apsystems"
@@ -83,7 +91,7 @@
     ],
     "globalDependencies": [
       {
-        "admin": ">=7.0.23"
+        "admin": ">=7.6.17"
       }
     ],
     "title": "APsystems EZ1 Adapter"
