@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "apsystems-ez1",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "news": {
       "0.1.1": {
         "en": "initial release",
@@ -67,6 +67,19 @@
         "pl": "pierwsza wersja przedpremierowa",
         "uk": "перша попередня версія",
         "zh-cn": "第一个预发布版本"
+      },
+      "0.1.6": {
+        "en": "fix warning at startup of validator function",
+        "de": "Warnung beim Start der Validatorfunktion behoben",
+        "ru": "исправить предупреждение при запуске функции валидатора",
+        "pt": "corrigir aviso na inicialização da função validadora",
+        "nl": "waarschuwing bij opstarten van validatorfunctie repareren",
+        "fr": "correction d'un avertissement au démarrage de la fonction de validation",
+        "it": "corretto l'avviso all'avvio della funzione di validazione",
+        "es": "Corregir advertencia al inicio de la función de validación.",
+        "pl": "napraw ostrzeżenie przy uruchomieniu funkcji walidatora",
+        "uk": "виправлено попередження під час запуску функції перевірки",
+        "zh-cn": "修复验证器功能启动时的警告"
       }
     },
     "titleLang": {
