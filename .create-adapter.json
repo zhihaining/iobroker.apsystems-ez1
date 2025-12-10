@@ -10,37 +10,41 @@
         "inverter",
         "apsystems"
     ],
+    "contributors": [
+        "Haining Zhi"
+    ],
     "expert": "yes",
     "features": [
         "adapter",
         "vis"
     ],
     "adminFeatures": [
+        "tab",
         "custom"
     ],
     "type": "energy",
-    "widgetIsMainFunction": "additional",
+    "widgetIsMainFunction": "main",
     "startMode": "daemon",
     "connectionType": "local",
     "dataSource": "poll",
     "connectionIndicator": "yes",
     "language": "JavaScript",
     "nodeVersion": "20",
-    "adminUi": "html",
+    "adminUi": "json",
+    "tabReact": "no",
     "tools": [
         "ESLint",
         "type checking"
     ],
     "eslintConfig": "official",
-    "i18n": "words.js",
     "releaseScript": "yes",
     "devServer": "local",
     "indentation": "Space (4)",
     "quotes": "double",
-    "authorName": "Haining Zhi",
-    "authorGithub": "Haining Zhi",
+    "authorName": "zhihaining",
+    "authorGithub": "zhihaining",
     "authorEmail": "zhihaining@gmail.com",
-    "gitRemoteProtocol": "SSH",
+    "gitRemoteProtocol": "HTTPS",
     "gitCommit": "no",
     "defaultBranch": "master",
     "license": "MIT License",

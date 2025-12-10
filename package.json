@@ -6,7 +6,11 @@
     "name": "Haining Zhi",
     "email": "zhihaining@gmail.com"
   },
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Haining Zhi"
+    }
+  ],
   "homepage": "https://github.com/zhihaining/ioBroker.apsystems-ez1",
   "license": "MIT",
   "keywords": [
@@ -39,7 +43,7 @@
     "@iobroker/testing": "^5.2.2",
     "@tsconfig/node20": "^20.1.8",
     "@types/iobroker": "npm:@iobroker/types@^7.1.0",
-    "@types/node": "^20.19.25",
+    "@types/node": "^20.19.26",
     "release-script": "^0.2.3",
     "standard-version": "^9.5.0",
     "typescript": "~5.9.3"
