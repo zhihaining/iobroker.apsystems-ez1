@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "apsystems-ez1",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "news": {
       "0.1.1": {
         "en": "initial release",
@@ -54,6 +54,19 @@
         "es": "Describa los cambios para esta versión",
         "pl": "Opisz zmiany dla tego wydania",
         "uk": "Опишіть зміни для цього релізу"
+      },
+      "0.1.5": {
+        "en": "first pre-release version",
+        "de": "erste Vorabversion",
+        "ru": "первая предварительная версия",
+        "pt": "primeira versão de pré-lançamento",
+        "nl": "eerste pre-releaseversie",
+        "fr": "première version préliminaire",
+        "it": "prima versione preliminare",
+        "es": "primera versión preliminar",
+        "pl": "pierwsza wersja przedpremierowa",
+        "uk": "перша попередня версія",
+        "zh-cn": "第一个预发布版本"
       }
     },
     "titleLang": {

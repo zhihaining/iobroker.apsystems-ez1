@@ -124,6 +124,9 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### 0.1.5 (2025-12-10)
+- first pre-release version
+
 ### 0.1.4 (2025-12-10)
 - first runable version tested on Hardware
 
