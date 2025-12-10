@@ -1,7 +1,6 @@
-
 {
+  "i18n": true,
   "type": "tabs",
-  "i18n": "true",
   "items": {
     "general": {
       "type": "panel",
