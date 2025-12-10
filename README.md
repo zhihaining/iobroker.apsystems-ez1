@@ -1,7 +1,5 @@
 ![Logo](admin/apsystems-ez1.png)
 
-# ioBroker.apsystems-ez1 ![Version](https://img.shields.io/badge/version-0.1.2-blue)
-
 [![NPM version](https://img.shields.io/npm/v/iobroker.apsystems-ez1.svg)](https://www.npmjs.com/package/iobroker.apsystems-ez1)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.apsystems-ez1.svg)](https://www.npmjs.com/package/iobroker.apsystems-ez1)
 ![Number of Installations](https://iobroker.live/badges/apsystems-ez1-installed.svg)
@@ -23,9 +21,6 @@ It supports:
 
 ---
 
-## Installation
-```bash
-npm install iobroker.apsystems-ez1
 
 [![NPM](https://nodei.co/npm/iobroker.apsystems-ez1.png?downloads=true)](https://nodei.co/npm/iobroker.apsystems-ez1/)
 
@@ -130,9 +125,11 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
     ### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS**
-* (Haining Zhi) initial release
+### 0.1.2 (2025-12-10)
+- Fix JSON parsing and repository checker issues; add adminUI config and icons.
 
+### 0.1.1 (2025-11-30)
+- Initial release
 
 ### Features
 - Polls /getDeviceInfo, /getOutputData, /getMaxPower, /getAlarm, /getOnOff
