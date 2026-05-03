@@ -218,6 +218,8 @@ and a new release will be published automatically.
 
 ---
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## 🧑‍💻 Author
 
 Haining Zhi  
